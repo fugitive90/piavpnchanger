@@ -82,6 +82,6 @@ if [[ $(grep tun /proc/net/dev) != 0 ]]; then
 else
 	echo "It is already running!"
 	echo "clearing.."
-	find . ! -name "$VPN_CONF" -type f -exec rm -f {} +
+	find . ! -name $VPN_CONF -type f -exec rm -f {} +
 fi
 echo "Finished!"
