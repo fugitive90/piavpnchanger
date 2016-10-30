@@ -1,12 +1,6 @@
 #!/bin/bash
 echo "Author Fugitive90"
 
-
-
-# if [ $(whoami) != "root" ]; then
-# 	echo "You need to run this script as root."
-# 	exit 1
-# fi
 [ $(whoami) != "root" ] && echo "You need to run this script as root." && exit 0
 
 echo "Enter folder where to copy files without trailing / : "
@@ -26,10 +20,6 @@ dpkg -s "openvpn" > /dev/null 2>&1
 if [ $?  -ne 0 ]; then
 	echo "OpenVPN not installed. Installing.."
 	apt-get install openvpn easy-rsa resolvconf -y
-	# if [ $? -ne 0 ]; then
-	# 	echo "Installation failed. Exiting"
-	# 	exit 1
-	# fi
 	[ $? -ne 0 ] && echo "Installation failed. Exiting" && exit 0
 else
 	echo "Installed. Skiping."
@@ -41,10 +31,6 @@ dpkg -s "fping" > /dev/null 2>&1
 if [ $? -ne 0 ]; then
 	echo "fping not installed. Installing.."
 	apt-get install fping -y
-	# if [ $? -ne 0 ]; then
-	# 	echo "Installation failed. Exiting"
-	# 	exit 1
-	# fi
 	[ $? -ne 0 ] && echo "Installation failed. Exiting" && exit 0
 fi
 
@@ -54,9 +40,7 @@ AUTH="${FOLDER}/auth" 		#Auth file
 VPN_CONF="${FOLDER}/PIAVPN.ovpn" 	#OpenVPN custom created config file
 VPN_LOG="/var/log/piavpn.log"
 
-# if [ -f ${OUTPUT} ]; then
-# 	>${OUTPUT}
-# fi
+
 [ -f ${OUTPUT} ] && >${OUTPUT} > /dev/null 2>&1
 
 if ! [ -f "${AUTH}"  ]; then
@@ -100,10 +84,7 @@ LOWEST_PING=$(sort -k 3,3 -n ${OUTPUT} | awk '{ print $1}' | head -n 1)
 
 echo "Connecting to the server: ${LOWEST_PING}"
 
-# if [ -f ${VPN_CONF} ]; then
-# 	echo "VPN config exist.. Deleting.."
-# 	>${VPN_CONF}
-# fi
+
 [ -f ${VPN_CONF} ] && echo "VPN config exist.. Deleting.." && >${VPN_CONF}
 
 cat <<EOF> ${VPN_CONF}
