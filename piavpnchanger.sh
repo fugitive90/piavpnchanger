@@ -1,5 +1,8 @@
 #!/bin/bash
-echo "Author Fugitive90"
+echo "*********************"
+echo "* Author Fugitive90 *"
+echo "*********************"
+printf "\n"
 
 [ $(whoami) != "root" ] && echo "You need to run this script as root." && exit 0
 
