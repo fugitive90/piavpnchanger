@@ -1,5 +1,5 @@
 <snippet>
-  <content><![CDATA[
+  <content>
 # PIAVPNCHANGER
 Simple script for fetching PrivateInternetAccess server lists, parse it through script, ping all servers, and based on lowest ping 
 creates OpenVPN config and connects to it.
@@ -22,6 +22,5 @@ GNU GPL
 
 ## Tested on
 Debian 8
-]]></content>
-  <tabTrigger>readme</tabTrigger>
+</content>
 </snippet>
