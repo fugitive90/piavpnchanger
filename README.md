@@ -1,7 +1,6 @@
-Simple script for fetching PrivateInternetAccess list of servers, parse it, pings and connects to a VPN based on lowest ping.
 <snippet>
   <content><![CDATA[
-# ${1:Project Name}
+# PIAVPNCHANGER
 Simple script for fetching PrivateInternetAccess server lists, parse it through script, ping all servers, and based on lowest ping 
 creates OpenVPN config and connects to it.
 At the end, it is possible to save all configs to a custom directory for later use.
