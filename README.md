@@ -1,10 +1,11 @@
 <snippet>
   <content>
 # PIAVPNCHANGER
-Simple script for fetching PrivateInternetAccess server lists, parse it through script, ping all servers, and based on lowest ping 
-creates OpenVPN config and connects to it.
+Bash script for fetching PrivateInternetAccess server lists, parse it through script, ping all servers, and based on lowest latency 
+generates OpenVPN config and connects to it. 
 
-At the end, it is possible to save all configs to a custom directory for later use.
+After first time use, there is no need to generate new configuration, just enter the existing path which you've choosen as a save path. It will check current latency and update piavpn.ovpn file with lowest latency detected server.
+
 
 ## Installation
 Clone git repo 
@@ -18,7 +19,7 @@ chmod +x ./piavpnchanger.sh
 sudo ./piavpnchanger.sh
 
 ## ToDo
-Update location of new cert files in new config.
+Dialog-based UI
 ## Credits
 fugitive90
 ## License
@@ -26,6 +27,9 @@ fugitive90
 GNU GPL
 
 ## Tested on
-Debian 8
+Debian Jessie 8.6
+CentOS 6.8
+Alpine Linux 3.5
+Manjaro 16.04
 </content>
 </snippet>
