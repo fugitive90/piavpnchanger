@@ -28,8 +28,12 @@ GNU GPL
 
 ## Tested on
 Debian Jessie 8.6
+
 CentOS 6.8
+
 Alpine Linux 3.5
+
 Manjaro 16.04
+
 </content>
 </snippet>
