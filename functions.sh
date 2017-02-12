@@ -27,7 +27,7 @@ read_path ()
 determine_best_latency () 
 {
 	check_vpn
-	echo "Finding the server with the lowest latency.Hold on"
+	echo "Finding the server with the lowest latency. Hold on"
 	fping -i 140 -C 1 -f "${1}" -q -a -r 10 -p 3000 >"${2}" 2>&1 #"error.log"
 	# [ -s "error.log" ] && echo "Unable to find server" && exit 
 	#We use this var as a server name in .ovpn file
@@ -65,6 +65,9 @@ start_vpn ()
 		else
 			echo
 			echo "VPN connection started." 
+			# Uncomment the following line if you are running it on a firewall. 
+			# Modifications are needed depending on your setup.
+			# /sbin/iptables -t nat -A POSTROUTING -o tun+ -j MASQUERADE
 		fi
 	fi
 }
