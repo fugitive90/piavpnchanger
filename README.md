@@ -29,6 +29,8 @@ GNU GPL
 ## Tested on
 Debian Jessie 8.6
 
+Raspbian 8 Jessie
+
 CentOS 6.8
 
 Alpine Linux 3.5

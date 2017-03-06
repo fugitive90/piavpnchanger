@@ -112,6 +112,11 @@ determine_os ()
 			_os=9
 			echo "Alpine detected"
 		fi
+		if [[ $(lsb_release -si) =~ "Raspbian" ]] ; then
+			_os=11
+			echo "Raspberry PI detected"
+		fi
+		
 	fi
 }
 #	Alternative for detecting OS
@@ -131,6 +136,9 @@ determine_os_alt ()
 
 	grep -qi "Alpine" $LSB
 	[[ $? -eq 0 ]] && _os=9
+	
+	grep -qi "Raspbian" $LSB
+	[[ $? -eq 0 ]] && _os=11
 
 	return 10
 }
@@ -289,7 +297,7 @@ get_ip ()
 }
 
 #######################
-#	Some kernel doesn't have TUN enable
+#	Some kernel doesn't have TUN module enabled
 #	We use this function to check is it loaded
 
 check_tun_module () 

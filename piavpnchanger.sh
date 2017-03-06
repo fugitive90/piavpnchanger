@@ -15,7 +15,7 @@ check_tun_module
 determine_os
 
 case "$_os" in
-	3 )
+	3,11 )
 	install_debian
 		;;
 	5 )
@@ -151,5 +151,5 @@ EOF
 	echo
 fi
 
-sleep 5 && get_ip
+sleep 10 && get_ip
 exit
